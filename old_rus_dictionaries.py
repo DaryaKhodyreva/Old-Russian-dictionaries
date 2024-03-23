@@ -1,10 +1,9 @@
 from flask import Flask, render_template, url_for, redirect, request, send_from_directory
 import json
 import sys
-# import pyximport; pyximport.install()
+from unification import unify
 
 sys.path.insert(0, './data_processing')
-from unification import unify
 
 __author__ = "Michael Voronov, Anna Sorokina"
 __license__ = "GPLv3"
