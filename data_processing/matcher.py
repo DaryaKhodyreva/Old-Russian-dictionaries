@@ -24,19 +24,20 @@
 __author__ = "Michael Voronov, Anna Sorokina"
 __license__ = "GPLv3"
 
-#Библиотеки для чтения исходных файлов
+# Библиотеки для чтения исходных файлов
 import json
 import pandas
 
-#С помощью Cython компилируем match_cython.pyx
+# С помощью Cython компилируем match_cython.pyx
 import pyximport; pyximport.install()
 import match_cython
 
-#Библиотеки для распоточивания задач
+# Библиотеки для распоточивания задач
 from multiprocessing import Pool, cpu_count
 import os
 
 CPU_CORES = cpu_count()
+
 
 def split_dict(d, n):
     it = list(d.items())

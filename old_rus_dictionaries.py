@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, redirect, request, send_from_directory
 import json
 import sys
+import pyximport; pyximport.install()
 from unification import unify
 
 sys.path.insert(0, './data_processing')
@@ -45,6 +46,7 @@ def search():
         qu = request.form['word']
         return redirect(url_for('search_result', query=qu))
     return render_template('search.html')
+
 
 @app.route('/res/<query>')
 def search_result(query):
